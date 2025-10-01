@@ -1,0 +1,49 @@
+/*
+ * Tools Section Styles
+ * ------------------------------------------------------------------------- */
+
+.tools-section {
+    max-width: 1440px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.tools-section .wp-block-heading {
+    margin-top: 5rem;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--dark-text);
+    margin-bottom: 1rem;
+}
+
+.tools-section .wp-block-paragraph {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 480px;
+    margin-bottom: 2rem;
+}
+
+/* Reuses the style for a link with an arrow */
+.link-with-arrow a {
+    color: #2563EB;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.link-with-arrow .link-arrow-icon {
+    width: 16px;
+    height: 16px;
+    padding-left: 10px;
+}
+
+.tools-section > .wp-block-column {
+    flex-basis: 50%; 
+    min-width: 0;    
+}

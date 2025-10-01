@@ -1,0 +1,79 @@
+/*
+ * CTA Banner Section Styles (2-Column Version)
+ * ------------------------------------------------------------------------- */
+
+.cta-banner-section {
+    max-width: 1280px;
+    margin: 6rem auto;
+    background-blend-mode: multiply;
+    background-image: url('../images/YOUR_SVG_FILENAME.svg'); /* Remember to change filename */
+    background-size: cover;
+    background-position: center;
+    min-height: 480px;
+    
+    /* These properties will vertically center your columns */
+    display: flex;
+    align-items: center;
+}
+
+/* This makes sure the inner container of the Cover block is full-width */
+.cta-banner-section .wp-block-cover__inner-container {
+    width: 100%;
+}
+
+/* This is your new Columns block */
+.cta-banner-columns {
+    width: 100%;
+    padding: 0 4rem; /* Adds space on the left/right of the content */
+}
+
+/* This sets the width of the left column (with text) */
+.cta-banner-columns > .wp-block-column:first-child {
+    flex-basis: 60%;
+}
+
+/* This sets the width of the empty right column */
+.cta-banner-columns > .wp-block-column:last-child {
+    flex-basis: 40%;
+}
+
+/* Text Styling */
+.cta-banner-section .wp-block-heading,
+.cta-banner-section .wp-block-paragraph {
+    color: #FFFFFF;
+    text-align: left;
+}
+
+.cta-banner-section .wp-block-heading {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.cta-banner-section .wp-block-paragraph {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    max-width: 500px; /* Constrain text width */
+}
+
+.cta-banner-link a {
+    color: #FFFFFF;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cta-banner-link a::after {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: currentColor;
+    mask-image: url('../icons/arrow.svg');
+    mask-repeat: no-repeat;
+    mask-size: 100%;
+}

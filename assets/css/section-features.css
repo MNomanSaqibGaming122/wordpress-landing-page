@@ -1,0 +1,113 @@
+/*
+ * Features Section Styles
+ * ------------------------------------------------------------------------- */
+
+.features-section {
+    max-width: 1440px;
+    margin: 6rem auto;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 6rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    align-items: center;
+    position: relative; 
+}
+
+/* Decorative plus icons on the left */
+.features-section::before {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 20%;
+    left: -20px;
+    background-image: url('data:image/svg+xml;utf8,<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 0V10M0 5H10" stroke="%23E0E7FF" stroke-width="2"/></svg>');
+    background-repeat: repeat;
+    background-size: 20px 20px;
+    opacity: 0.8;
+    z-index: -1;
+}
+
+/* Left Column - Image Collage */
+.features-image-collage {
+
+    position: relative;
+    height: 600px;
+    width: 300px; /* Define a height for the container */
+}
+
+.features-image-collage img {
+    position: absolute;
+    object-fit: cover;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #FFF;
+}
+
+.collage-img-1 {
+    width: 60%;
+    height: 65%;
+    top: 100px;
+    left: 0;
+    border-radius: 24px;
+    z-index: 1;
+}
+
+.collage-img-2 {
+    width: 60%;
+    height: 65%;
+    bottom: 200px;
+    left: 63%;
+    border-radius: 16px;
+    z-index: 3;
+}
+
+.collage-img-3 {
+    width: 60%;
+    height: 65%;
+    top: 10%;
+    left: 380px;
+    border-radius: 24px;
+    z-index: 2;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* Right Column - Text Content
+/* -------------------------------------------------------------------------- */
+
+.features-text-column > .wp-block-group__inner-container,
+.features-text-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.features-section .wp-block-heading {
+    margin-top: -4rem;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--dark-text);
+    
+}
+
+.features-section .wp-block-paragraph {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 480px;
+}
+
+.features-link-final a {
+    color: #2563EB;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* This creates space between the text and the arrow image */
+}
+
+.features-link-final .link-arrow-icon {
+    width: 16px;
+    height: 16px;
+    padding-left: 10px;
+}
