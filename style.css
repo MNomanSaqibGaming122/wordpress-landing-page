@@ -154,7 +154,7 @@ body {
 
 /* Styles for the content inside the columns (these can stay the same) */
 .hero-title {
-    font-size: 60px;
+    font-size: 46px;
     font-weight: 800;
     line-height: 1.2;
     color: var(--dark-text);
@@ -177,7 +177,8 @@ body {
 }
 .email-input-wrapper {
     position: relative;
-    width: 408px;
+    width: 100%; 
+    max-width: 408px;
     flex-shrink: 0;
 }
 .email-input-wrapper::before {
@@ -403,7 +404,7 @@ body {
 
 
 /* -------------------------------------------------------------------------- */
-/* 6. Footer Styles
+/*  Footer Styles
 /* -------------------------------------------------------------------------- */
 .wp-block-template-part.has-background {
     margin-top: 0;
@@ -445,4 +446,195 @@ body {
 
 .wp-block-site-info {
     display: none;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*  MOBILE RESPONSIVENESS (Max-width 768px) */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+
+    /* --- GLOBAL TYPOGRAPHY & ALIGNMENT FIXES --- */
+    
+    .hero-h1 {
+        font-size: 36px !important;
+        line-height: 1.1 !important;
+        text-align: center !important;
+    }
+    .hero-subtitle, .workflow-content p {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* --- HEADER --- */
+    .site-header-custom { flex-wrap: wrap; justify-content: center; padding: 1rem 1rem; }
+    .header-right-content { order: 2; width: 100%; justify-content: center; margin-top: 10px; gap: 10px; flex-wrap: wrap; }
+    .site-header-custom .wp-block-column:first-child { width: 100%; text-align: center; }
+    .header-nav { display: none; }
+    
+    /* --- LAYOUT STACKING --- */
+    .hero-section.wp-block-columns,
+    .hero-section > .wp-block-columns,
+    .workflow-section.wp-block-columns {
+        flex-direction: column !important;
+        gap: 30px !important;
+        padding-top: 60px !important; 
+    }
+
+
+
+.btn {
+    display: block !important; /* Resetting this to ensure no conflicts */
+}
+    .hero-section > .wp-block-column:first-child,
+    .hero-section > .wp-block-column:last-child {
+        flex-basis: 100% !important;
+        width: 100% !important;
+    }
+
+    /* 4. EMAIL FORM / INPUT & BUTTON FIX */
+    .hero-cta-row {
+        flex-direction: column !important; 
+        width: 100% !important;
+        max-width: 100% !important;
+        align-items: center !important;
+        gap: 15px;
+    }
+
+    .hero-cta-row .email-input-wrapper,
+    .hero-cta-row .email-input-wrapper input {
+        box-sizing: border-box !important;
+        min-width: 0 !important; 
+        width: 200px !important; 
+        max-width: 90% !important;
+        margin: 0 auto;
+    }
+    .email-input-wrapper{
+        max-width: 100px !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+
+    /* Update these rules INSIDE your @media (max-width: 768px) { ... } block */
+
+.hero-clients-wrapper {
+    /* CRITICAL: Enforce horizontal display and allow wrapping */
+    display: flex !important;
+    flex-direction: row !important; 
+    flex-wrap: wrap !important;
+    
+    /* Force 100% width and remove any external offsets that could hide logos */
+    width: 100% !important; 
+    max-width: 100% !important;
+    margin: 0 !important;
+    
+    /* Ensure height adapts to the wrapped content */
+    height: auto !important;
+    padding: 0 !important; 
+    gap: 0 !important; 
+    
+    /* Ensure no parent container is hiding content horizontally */
+    overflow: visible !important;
+    overflow-x: hidden !important; 
+}
+
+.client-logo {
+    /* Force each logo to take exactly 50% width */
+    flex-basis: 48% !important; 
+    flex-shrink: 0 !important; /* Prevents logos from shrinking to zero */
+    
+    box-sizing: border-box !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 15px 0 !important; 
+    
+    /* Apply borders cleanly (no complicated logic should hide items) */
+    border-right: none !important; 
+    border-bottom: none !important; 
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* MAC WINDOW / BROWSER FRAME RESPONSIVENESS */
+/* -------------------------------------------------------------------------- */
+
+.hero-image-container {
+    width: 100% !important;
+    max-width: 100% !important; 
+    margin: 0 auto !important; /* Center it */
+    padding: 0 10px !important; /* Add slight horizontal padding */
+}
+
+/* 2. Target the main browser frame */
+.browser-frame {
+    /* CRITICAL FIX: Override fixed desktop dimensions (width/height) */
+    width: 100% !important;
+    max-width: 100% !important;
+    
+    /* Let the height be determined by the image and content flow, not a fixed value */
+    height: auto !important; 
+    
+    /* Add a small adjustment to the aesthetic properties that were being lost */
+    border-radius: 10px !important; 
+}
+
+/* 3. Ensure the browser header is not hidden */
+.browser-header {
+    display: flex !important; /* Forces visibility */
+    flex-wrap: nowrap !important;
+    padding: 8px 10px !important; 
+}
+
+/* 4. Ensure the content (image) scales inside the fluid frame */
+.browser-content {
+    width: 100% !important;
+    /* Remove any complex positioning that conflicts with fluid layout */
+    position: relative !important;
+    padding-bottom: 0 !important; /* Reset aspect ratio hack */
+    height: auto !important;
+    line-height: 0 !important;
+}
+
+/* 5. Reduce Play Button size */
+.play-button {
+    width: 60px !important;
+    height: 60px !important;
+    background-size: 60px !important; 
+}
+
+    /* Button in CTA row must also take up the same width */
+    .hero-cta-row .wp-block-button {
+        width: 90% !important;
+        max-width: 90% !important;
+        margin: 0 auto;
+    }
+    .hero-cta-row .wp-block-button__link {
+        width: 100% !important;
+        display: block !important;
+    }
+
+    /* 5. VISUAL & FOOTER FIXES */
+    .browser-frame-container {
+        max-width: 90% !important; 
+        margin: 0 auto !important; 
+    }
+    .footer-nav-links {
+        /* Fixes footer navigation from wrapping on small screens */
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        width: 100% !important;
+    }
+    .site-footer-minimal {
+        /* Allow footer to wrap on mobile */
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .footer-copyright {
+        /* Ensure copyright centers */
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
 }

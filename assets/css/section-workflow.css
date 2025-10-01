@@ -91,4 +91,73 @@
     margin-top: 0 !important; 
 }
 
+/* ========================================================================= */
+/* MOBILE RESPONSIVENESS OVERRIDES (@media) */
+/* ========================================================================= */
 
+@media (max-width: 768px) {
+
+.workflow-section {
+    flex-direction: column !important; 
+    padding: 0 1rem !important; /* Add padding to the section itself */
+    gap: 2rem !important;
+    width: 100% !important;
+}
+
+/* 2. Text Centering and Scaling */
+.workflow-content h2 {
+    text-align: center !important;
+    font-size: 36px !important; /* Scale down heading */
+}
+.workflow-body-text {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0 1rem;
+}
+
+/* 3. CRITICAL: Tab Fix (Force Full Width and Shrink Padding) */
+.workflow-tabs-container {
+    width: 100% !important; /* Force container to full width */
+    justify-content: center;
+    border-radius: 0 !important; /* Remove radius to maximize space */
+    padding: 0 !important; /* Remove padding from outer container */
+    
+    /* Ensure no horizontal overflow */
+    overflow-x: hidden !important; 
+}
+
+.workflow-tab {
+    /* ... existing styles ... */
+
+    /* CRITICAL FIXES FOR WRAPPING */
+    white-space: nowrap !important; /* Keeps text on one horizontal line */
+    writing-mode: horizontal-tb !important; /* Enforces horizontal display */
+    text-orientation: mixed !important;
+    
+    min-width: 33% !important; /* Ensure each button takes at least 1/3 of the space */
+    
+    /* Reduced padding/sizing */
+    padding: 10px 5px !important; 
+    font-size: 14px !important;
+    flex-grow: 1 !important;
+    /* ... rest of the styles ... */
+}
+
+/* 4. CTA Centering */
+.workflow-cta {
+    display: block !important;
+    text-align: center !important;
+    margin-top: 1rem !important;
+}
+
+/* 5. Visual Column (Mac Window) Scaling */
+.workflow-visual {
+    padding: 0 10px !important; /* Add padding to prevent Mac window from hitting screen edge */
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 20px !important;
+}
+
+
+}

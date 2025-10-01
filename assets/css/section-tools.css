@@ -47,3 +47,61 @@
     flex-basis: 50%; 
     min-width: 0;    
 }
+
+/* ========================================================================= */
+/* MOBILE RESPONSIVENESS OVERRIDES (@media) */
+/* ========================================================================= */
+
+@media (max-width: 768px) {
+
+    .tools-section { 
+        flex-direction: column !important; /* Forces stacking */
+        padding: 0 1rem !important; 
+        gap: 2rem !important;
+        width: 100% !important;
+    }
+
+    /* Order Fix: Ensure text (first column) comes above the visual (last column) */
+    .tools-section > .wp-block-column:first-child { 
+        order: 1 !important; /* Text Column at the top */
+        width: 100% !important; 
+    }
+    .tools-section > .wp-block-column:last-child {
+        order: 2 !important; /* Visual Column at the bottom */
+        width: 100% !important; 
+    }
+
+    /* Text Centering and Scaling */
+    .tools-section .wp-block-heading {
+        text-align: center !important;
+        font-size: 36px !important; 
+        margin-top: 0 !important; 
+    }
+
+    .tools-section .wp-block-paragraph {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .link-with-arrow {
+        display: flex !important;
+        justify-content: center !important; 
+        width: 100% !important;
+    }
+
+    /* SVG/Visual Scaling Fix (Ensures the illustration shrinks) */
+    .tools-visual {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 1rem !important; 
+        box-sizing: border-box !important;
+    }
+    .tools-visual img,
+    .tools-visual svg {
+        max-width: 400px !important;
+        height: auto !important;
+        display: block !important;
+        margin: 0 auto !important;
+    }
+}

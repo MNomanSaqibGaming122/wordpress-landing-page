@@ -79,3 +79,62 @@
 .problems-banner .banner-cta:hover {
     opacity: 0.8;
 }
+
+
+/* ========================================================================= */
+/* MOBILE RESPONSIVENESS OVERRIDES (@media) */
+/* ========================================================================= */
+
+@media (max-width: 768px) {
+
+.problems-banner {
+    /* Reduce overall height and padding for mobile view */
+    min-height: 300px !important;
+    padding: 30px !important; 
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+    max-width: 400px !important;
+}
+
+.problems-banner::before {
+    /* CRITICAL FIX: Disable the aggressive rotation and scaling on mobile screens */
+    transform: none !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+.problems-banner .banner-content-wrapper {
+    /* Reset padding and ensure fluid height */
+    padding: 0 !important;
+    height: auto !important;
+}
+
+.problems-banner .banner-text-content {
+    /* Center the text block horizontally and ensure it uses full width */
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    max-width: 90% !important;
+}
+
+.problems-banner h2 {
+    font-size: 30px !important;
+    text-align: center !important;
+}
+
+.problems-banner p {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 80% !important;
+}
+
+.problems-banner .banner-cta {
+    /* Ensure CTA link is centered and uses margin-top for spacing */
+    display: block !important;
+    text-align: center !important;
+    margin-top: 15px !important;
+}
+
+}

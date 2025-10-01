@@ -70,3 +70,27 @@
     background-color: var(--color-primary-dark) !important;
     transform: translateY(-2px); 
 }
+
+/* -------------------------------------------------------------------------- */
+/* MOBILE RESPONSIVENESS OVERRIDES for Features Section */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+.cta-section {
+    /* Reduce padding for mobile view */
+    padding: 40px 20px !important; 
+    margin: 40px auto !important; /* Smaller vertical margin */
+    height: auto !important;
+    max-height: 400px !important;
+}
+
+.cta-section h2 {
+    font-size: 32px !important;
+    text-align: center !important;
+}
+
+.cta-section p {
+    padding: 0 10px; /* Add slight horizontal padding */
+    max-width: 100% !important;
+    
+}
+}

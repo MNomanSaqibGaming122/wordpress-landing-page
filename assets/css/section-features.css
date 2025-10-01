@@ -111,3 +111,97 @@
     height: 16px;
     padding-left: 10px;
 }
+
+/* -------------------------------------------------------------------------- */
+/* MOBILE RESPONSIVENESS OVERRIDES for Features Section */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    /* ----------------------------------- */
+    /* 1. LAYOUT STACKING & ORDER FIX */
+    /* ----------------------------------- */
+    .features-section {
+        flex-direction: column !important; /* Force columns to stack */
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+        padding-left: 1rem !important; 
+        padding-right: 1rem !important; 
+        align-items: center !important;
+    }
+
+    .features-section > .wp-block-column:first-child { 
+        order: 2 !important; /* Image column moves to position 2 */
+        width: 100% !important;
+        text-align: center !important;
+    }
+    .features-section > .wp-block-column:last-child {
+        order: 1 !important; /* Text column moves to position 1 */
+        width: 100% !important;
+        text-align: center !important;
+    }
+    
+    /* ----------------------------------- */
+    /* 2. TEXT/TYPOGRAPHY SCALING */
+    /* ----------------------------------- */
+    .features-section .wp-block-heading {
+        margin-top: 0 !important; /* Remove negative margin on mobile */
+        font-size: 36px !important; /* Scale down heading */
+        line-height: 1.2 !important;
+        text-align: center !important;
+    }
+    .features-section .wp-block-paragraph {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    .features-link-final a {
+        display: flex !important;
+        justify-content: center !important;
+        width: 100% !important;
+        margin-top: 1rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    /* ----------------------------------- */
+    /* 3. COLLAGE  */
+    /* ----------------------------------- */
+    .features-image-collage {
+        width: 100% !important; 
+        height: 400px !important; 
+        margin-top: 20px;
+        transform: scale(0.6) !important; /* CRITICAL: Scale the entire collage down */
+        transform-origin: center center !important;
+        overflow: visible !important;
+    }
+
+    /* Images must remain ABSOLUTELY positioned relative to their scaled parent 
+       to preserve the non-overlapping pattern. Only their parent is scaled down. */
+    .features-image-collage img {
+        position: absolute !important; 
+        width: 45% !important; 
+        height: 65% !important; 
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+        
+        /* Reduce positional offsets to keep images closer to the center */
+        top: auto !important;
+        bottom: auto !important; 
+        left: auto !important; 
+        
+        /* Simplified/Centered Positions */
+        /* Img 1: Center Left */
+        &.collage-img-1 {
+            top: 20px !important;
+            left: -25% !important; 
+        }
+        /* Img 2: Center Right */
+        &.collage-img-2 {
+            bottom: 50px !important; 
+            left: 25% !important;
+            top: -15% !important;
+        }
+        /* Img 3: Top Right */
+        &.collage-img-3 {
+            top: -10% !important;
+            left: 75% !important; 
+        }
+    }
+}
