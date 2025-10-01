@@ -5,32 +5,37 @@
  Author:       Your Name
  Version:      1.0.0
 */
-
-
-/*
- * 1. Global Styles & Variables
- * ------------------------------------------------------------------------- */
-:root {
-    --primary-blue: #2A53C1;
-    --dark-text: #1D2939;
-    --body-text: #667085;
-    --light-gray-border: #EAECF0;
-    --font-family-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+/* Final fix to make plus icons visible */
+.hero-section > .wp-block-column {
+    overflow: visible !important;
 }
 
-
+/* -------------------------------------------------------------------------- */
+/* 1. Global Styles & Variables
+/* -------------------------------------------------------------------------- */
+:root {
+    --primary-blue: #2563EB;
+    --primary-blue-hover: #1D4ED8;
+    --dark-text: #1D2939;
+    --body-text: #667085;
+    --light-gray-border: #CBD5E1;
+    --font-family-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
 
 body {
     font-family: var(--font-family-main);
     color: var(--body-text);
-    background-color: #FFFFFF; /* Ensures a white background */
+    background-color: #FFFFFF;
 }
 
-/* -------------------------------------------------------------------------- */
-/* 2. Header Styles (for Custom Structure)
-/* -------------------------------------------------------------------------- */
+.home .entry-title {
+    display: none;
+}
 
-/* This styles the top-level Group block */
+
+/* -------------------------------------------------------------------------- */
+/* 2. Header Styles
+/* -------------------------------------------------------------------------- */
 .site-header-custom {
     display: flex;
     justify-content: space-between;
@@ -40,14 +45,12 @@ body {
     padding: 1.5rem 2rem;
 }
 
-/* This styles the Row containing the Nav and Buttons */
 .header-right-content {
     display: flex;
     align-items: center;
-    gap: 2rem; /* This creates space between the menu and the buttons */
+    gap: 2rem;
 }
 
-/* This styles the Navigation block's inner list */
 .header-nav ul {
     display: flex;
     gap: 2rem;
@@ -78,25 +81,360 @@ body {
     font-weight: 600;
     font-size: 16px;
     border: 1px solid transparent;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s;
 }
 
 .btn-primary {
     background-color: var(--primary-blue);
     color: #FFFFFF;
     border-color: var(--primary-blue);
+    border-radius: 7px;
 }
 .btn-primary:hover {
-    background-color: #22449b;
-    border-color: #22449b;
+    background-color: var(--primary-blue-hover);
+    border-color: var(--primary-blue-hover);
 }
 
 .btn-secondary {
     background-color: transparent;
-    color: var(--body-text);
-    border: 1px solid var(--light-gray-border);
+    color: var(--primary-blue);
 }
 .btn-secondary:hover {
-    background-color: var(--light-gray-border);
+    background-color: var(--primary-blue);
+    color: #FFFFFF;
+}
+
+.btn-hero {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.hero-form-group .btn-hero {
+    margin-left: 38px; 
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* 4. Hero Section Styles (Aggressive Override)
+/* -------------------------------------------------------------------------- */
+
+/* The main container for the hero section */
+.hero-section.wp-block-columns {
+    display: flex !important;            
+    align-items: center !important;     
+    flex-wrap: nowrap !important;      
+    justify-content: center !important;
+    max-width: 1440px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    gap: 10rem !important;              
+}
+
+/* The columns themselves */
+.hero-section > .wp-block-column {
+    overflow: visible !important; 
+    flex-shrink: 0 !important;   
+}
+
+.hero-section > .wp-block-column:first-child {
+    flex-basis: 45% !important;   /* FORCE the width of the left column */
+}
+.hero-section > .wp-block-column:last-child {
+    flex-basis: 55% !important;   /* FORCE the width of the right column */
+}
+
+/* Styles for the content inside the columns (these can stay the same) */
+.hero-title {
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1.2;
     color: var(--dark-text);
+    margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+}
+
+.hero-form-group > .wp-block-group__inner-container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 4rem;
+}
+.email-input-wrapper {
+    position: relative;
+    width: 408px;
+    flex-shrink: 0;
+}
+.email-input-wrapper::before {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url('assets/icons/email-icon.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    pointer-events: none;
+}
+.email-input-wrapper input {
+    width: 100%;
+    height: 48px;
+    border: 1px solid var(--light-gray-border);
+    border-radius: 8px;
+    padding-left: 44px;
+    font-size: 16px;
+}
+
+
+.hero-form-group .wp-block-button {
+    flex-shrink: 0;
+}
+.hero-form-group .wp-block-button__link {
+    height: 48px;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Client Logos (Final Version with Correct Distribution) */
+
+.hero-clients-wrapper {
+    display: flex;
+    align-items: stretch; /* Make items fill the height */
+    flex-wrap: wrap;
+    background-color: #F1F5F9;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    height: 56px;
+    margin-top: 1.5rem;
+    width: 600px;
+    box-sizing: border-box;
+    padding: 0; /* Remove padding, as we'll space items manually */
+    overflow: hidden; /* Ensures rounded corners are respected */
+}
+
+.client-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers the icon and text */
+    flex-grow: 1; /* THIS IS THE KEY FIX: Makes each item grow to fill space */
+    color: #64748B;
+    font-weight: 600;
+    font-size: 14px;
+    white-space: nowrap;
+    gap: 8px; /* Gap between icon and text */
+}
+
+/* Add a border between the items, but not on the last one */
+.client-logo:not(:last-child) {
+    border-right: 1px solid #E2E8F0;
+}
+
+/* Base styles for all icons */
+.client-logo::before {
+    content: '';
+    width: 22px;
+    height: 24px;
+    background-color: #94A3B8;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+    flex-shrink: 0;
+}
+
+/* Links to your SVG files (these remain the same) */
+.logo-shells::before {
+    mask-image: url('assets/icons/shells.svg');
+}
+.logo-smartfinders::before {
+    mask-image: url('assets/icons/smartfinder.svg');
+}
+.logo-artvenue::before {
+    mask-image: url('assets/icons/artvenue.svg');
+}
+.logo-waves::before {
+    mask-image: url('assets/icons/waves.svg');
+}
+/* -------------------------------------------------------------------------- */
+/* 5. Hero Image Frame
+/* -------------------------------------------------------------------------- */
+.hero-image-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.browser-frame {
+    background-color: #ffffff;
+    border-radius: 20px;
+    width: 600px;
+    height: 440px; 
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    border: 1px solid #E2E8F0;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+}
+
+.browser-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: #F8FAFC;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.traffic-lights span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+.traffic-lights .red { background-color: #F87171; }
+.traffic-lights .yellow { background-color: #FBBF24; }
+.traffic-lights .green { background-color: #34D399; }
+
+.address-bar {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 14px;
+    background-color: #E2E8F0;
+    border-radius: 6px;
+    padding: 6px 10px;
+    margin: 0 20px;
+}
+.address-bar span {
+    font-family: monospace;
+    color: #4B5563;
+}
+
+.nav-buttons .arrow-btn {
+    background: none;
+    border: none;
+    color: #9CA3AF;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.browser-content {
+    position: relative;
+    line-height: 0;
+}
+.browser-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.play-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+.play-button svg {
+    width: 32px;
+    height: 32px;
+    fill: #4A5568;
+    opacity: 0.8;
+}
+
+.hero-bg-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-bg-shapes .plus-icon {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-image: url('data:image/svg+xml;utf8,<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 0V14M0 7H14" stroke="currentColor" stroke-width="2.5"/></svg>');
+}
+
+.plus-blue { color: #60A5FA; top: 65%; right: -25px; transform: rotate(45deg); }
+.plus-orange { color: #FBBF24; top: 85%; right: 20px; transform: rotate(15deg); }
+.plus-purple { color: #C084FC; top: 92%; right: 80px; transform: rotate(-15deg); }
+.plus-green { color: #34D399; top: 20%; right: 20px; transform: rotate(-30deg); }
+.plus-faint-blue, .plus-faint-green, .plus-faint-pink { color: #E2E8F0; opacity: 0.8; }
+.plus-faint-blue { top: 95%; right: 120px; }
+.plus-faint-green { top: 95%; right: 145px; }
+.plus-faint-pink { top: 95%; right: 170px; }
+
+
+/* -------------------------------------------------------------------------- */
+/* 6. Footer Styles
+/* -------------------------------------------------------------------------- */
+.wp-block-template-part.has-background {
+    margin-top: 0;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    border-top: 1px solid var(--light-gray-border);
+}
+
+.site-footer-columns {
+    max-width: 1280px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.footer-heading {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--dark-text);
+    margin-bottom: 1rem;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--body-text);
+}
+
+.footer-links a:hover {
+    color: var(--primary-blue);
+}
+
+.wp-block-site-info {
+    display: none;
 }
