@@ -1,79 +1,81 @@
-/*
- * CTA Banner Section Styles (2-Column Version)
- * ------------------------------------------------------------------------- */
+/* ========================================================================= */
+/* Banner: Problems Come and Get Solved */
+/* ========================================================================= */
 
-.cta-banner-section {
-    max-width: 1280px;
-    margin: 6rem auto;
-    background-blend-mode: multiply;
-    background-image: url('../images/YOUR_SVG_FILENAME.svg'); /* Remember to change filename */
-    background-size: cover;
-    background-position: center;
-    min-height: 480px;
+.problems-banner {
+    /* Base Container Styling */
     
-    /* These properties will vertically center your columns */
+    width: 100%;
+    max-width: 1440px; /* Adjust to match your container width */
+    margin: 4rem auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    background-color: #6C2B9D; /* Base deep purple color */
+    min-height: 496px /* Minimum visual height */
+}
+
+/* Pseudo-element for the Rotated Background Image and Purple Overlay */
+.problems-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0; /* shorthand for top:0; left:0; right:0; bottom:0 */
+    z-index: 1;
+    
+    background-image: url('../images/banner.jpg');
+    background-size: cover;      /* fills entire box */
+    background-position: center; /* centers image */
+    background-repeat: no-repeat;
+    
+    /* Purple overlay */
+    background-color: #6C2B9D;
+    background-blend-mode: multiply;
+    opacity: 0.7; /* adjust transparency */
+}
+
+
+
+.problems-banner .banner-content-wrapper {
+    position: relative;
+    z-index: 3; /* Must be above the pseudo-elements */
     display: flex;
     align-items: center;
+    height: 100%;
+    padding: 60px; /* Inner padding */
 }
 
-/* This makes sure the inner container of the Cover block is full-width */
-.cta-banner-section .wp-block-cover__inner-container {
-    width: 100%;
+.problems-banner .banner-text-content {
+    /* Pushes the content to the right side (roughly 1/3 of the space) */
+    margin-left: auto; 
+    width: 48%; /* Controls the width of the text block */
+    color: white;
 }
 
-/* This is your new Columns block */
-.cta-banner-columns {
-    width: 100%;
-    padding: 0 4rem; /* Adds space on the left/right of the content */
-}
-
-/* This sets the width of the left column (with text) */
-.cta-banner-columns > .wp-block-column:first-child {
-    flex-basis: 60%;
-}
-
-/* This sets the width of the empty right column */
-.cta-banner-columns > .wp-block-column:last-child {
-    flex-basis: 40%;
-}
-
-/* Text Styling */
-.cta-banner-section .wp-block-heading,
-.cta-banner-section .wp-block-paragraph {
-    color: #FFFFFF;
-    text-align: left;
-}
-
-.cta-banner-section .wp-block-heading {
+.problems-banner h2 {
     font-size: 48px;
-    font-weight: 800;
+    color: white;
+    font-weight: 700;
     line-height: 1.2;
+    margin-bottom: 1rem;
 }
 
-.cta-banner-section .wp-block-paragraph {
+.problems-banner p {
+    color: white;
+    opacity: 0.85;
     font-size: 16px;
-    line-height: 1.6;
-    margin-top: 1.5rem;
-    margin-bottom: 2rem;
-    max-width: 500px; /* Constrain text width */
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
 }
 
-.cta-banner-link a {
-    color: #FFFFFF;
-    font-weight: 600;
+.problems-banner .banner-cta {
+    color: white;
     text-decoration: none;
+    font-weight: 600;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    transition: opacity 0.3s ease;
 }
 
-.cta-banner-link a::after {
-    content: '';
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    background-color: currentColor;
-    mask-image: url('../icons/arrow.svg');
-    mask-repeat: no-repeat;
-    mask-size: 100%;
+.problems-banner .banner-cta:hover {
+    opacity: 0.8;
 }
