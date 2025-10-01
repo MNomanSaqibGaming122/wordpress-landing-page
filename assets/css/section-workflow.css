@@ -13,7 +13,7 @@
 
 /* --- Left Column: Content Area --- */
 .workflow-content h2 {
-    color: #1F2937; /* Dark text color */
+    color: #1F2937; 
     font-size: 40px;
     font-weight: 800;
     line-height: 1.2;
@@ -73,7 +73,7 @@
 }
 
 .workflow-cta {
-    color: #3B76F5; /* Primary blue color */
+    color: #3B76F5; 
     font-weight: 600;
     text-decoration: none;
     display: inline-block;
@@ -99,7 +99,7 @@
 
 .workflow-section {
     flex-direction: column !important; 
-    padding: 0 1rem !important; /* Add padding to the section itself */
+    padding: 0 1rem !important; 
     gap: 2rem !important;
     width: 100% !important;
 }
@@ -107,7 +107,7 @@
 /* 2. Text Centering and Scaling */
 .workflow-content h2 {
     text-align: center !important;
-    font-size: 36px !important; /* Scale down heading */
+    font-size: 36px !important; 
 }
 .workflow-body-text {
     text-align: center !important;
@@ -116,32 +116,27 @@
     padding: 0 1rem;
 }
 
-/* 3. CRITICAL: Tab Fix (Force Full Width and Shrink Padding) */
+
 .workflow-tabs-container {
-    width: 100% !important; /* Force container to full width */
+    width: 100% !important;
     justify-content: center;
-    border-radius: 0 !important; /* Remove radius to maximize space */
-    padding: 0 !important; /* Remove padding from outer container */
+    border-radius: 0 !important; 
+    padding: 0 !important; 
     
-    /* Ensure no horizontal overflow */
     overflow-x: hidden !important; 
 }
 
 .workflow-tab {
-    /* ... existing styles ... */
 
-    /* CRITICAL FIXES FOR WRAPPING */
-    white-space: nowrap !important; /* Keeps text on one horizontal line */
-    writing-mode: horizontal-tb !important; /* Enforces horizontal display */
+    white-space: nowrap !important; 
+    writing-mode: horizontal-tb !important; 
     text-orientation: mixed !important;
     
-    min-width: 33% !important; /* Ensure each button takes at least 1/3 of the space */
+    min-width: 33% !important; 
     
-    /* Reduced padding/sizing */
     padding: 10px 5px !important; 
     font-size: 14px !important;
     flex-grow: 1 !important;
-    /* ... rest of the styles ... */
 }
 
 /* 4. CTA Centering */
@@ -153,7 +148,7 @@
 
 /* 5. Visual Column (Mac Window) Scaling */
 .workflow-visual {
-    padding: 0 10px !important; /* Add padding to prevent Mac window from hitting screen edge */
+    padding: 0 10px !important;
     width: 100% !important;
     max-width: 100% !important;
     margin-top: 20px !important;

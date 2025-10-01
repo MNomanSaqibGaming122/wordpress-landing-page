@@ -55,19 +55,18 @@
 @media (max-width: 768px) {
 
     .tools-section { 
-        flex-direction: column !important; /* Forces stacking */
+        flex-direction: column !important;
         padding: 0 1rem !important; 
         gap: 2rem !important;
         width: 100% !important;
     }
 
-    /* Order Fix: Ensure text (first column) comes above the visual (last column) */
     .tools-section > .wp-block-column:first-child { 
-        order: 1 !important; /* Text Column at the top */
+        order: 1 !important;
         width: 100% !important; 
     }
     .tools-section > .wp-block-column:last-child {
-        order: 2 !important; /* Visual Column at the bottom */
+        order: 2 !important; 
         width: 100% !important; 
     }
 
@@ -90,7 +89,6 @@
         width: 100% !important;
     }
 
-    /* SVG/Visual Scaling Fix (Ensures the illustration shrinks) */
     .tools-visual {
         width: 100% !important;
         max-width: 100% !important;

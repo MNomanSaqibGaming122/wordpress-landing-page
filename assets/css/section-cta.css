@@ -9,7 +9,7 @@
     max-width: 1280px; 
     margin: 80px auto; 
     padding: 80px 40px;
-    border-radius: 30px; /* Matching your specified radius */
+    border-radius: 30px; 
     
     text-align: center;
     position: relative;
@@ -41,10 +41,8 @@
 /* 1. DESIGN TOKENS (from global stylesheet) */
 /* ----------------------------------- */
 :root {
-    /* This must be the correct color for the button */
     --color-primary: #2563EB; 
     --color-primary-dark: #1e40af;
-    /* ... rest of your global variables ... */
 }
 
 /* ----------------------------------- */
@@ -62,7 +60,7 @@
     padding: 12px 25px !important;
     cursor: pointer;
     
-    /* REQUIRED CSS ANIMATION/TRANSITION */
+    /* CSS ANIMATION/TRANSITION */
     transition: background-color 0.3s ease, transform 0.2s ease; 
 }
 
@@ -78,7 +76,7 @@
 .cta-section {
     /* Reduce padding for mobile view */
     padding: 40px 20px !important; 
-    margin: 40px auto !important; /* Smaller vertical margin */
+    margin: 40px auto !important; 
     height: auto !important;
     max-height: 400px !important;
 }
@@ -89,7 +87,7 @@
 }
 
 .cta-section p {
-    padding: 0 10px; /* Add slight horizontal padding */
+    padding: 0 10px; 
     max-width: 100% !important;
     
 }

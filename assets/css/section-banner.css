@@ -6,48 +6,47 @@
     /* Base Container Styling */
     
     width: 100%;
-    max-width: 1440px; /* Adjust to match your container width */
+    max-width: 1440px; 
     margin: 4rem auto;
     position: relative;
     overflow: hidden;
     border-radius: 30px;
-    background-color: #6C2B9D; /* Base deep purple color */
-    min-height: 496px /* Minimum visual height */
+    background-color: #6C2B9D; 
+    min-height: 496px 
 }
 
 /* Pseudo-element for the Rotated Background Image and Purple Overlay */
 .problems-banner::before {
     content: '';
     position: absolute;
-    inset: 0; /* shorthand for top:0; left:0; right:0; bottom:0 */
+    inset: 0; 
     z-index: 1;
     
     background-image: url('../images/banner.jpg');
-    background-size: cover;      /* fills entire box */
-    background-position: center; /* centers image */
+    background-size: cover;     
+    background-position: center; 
     background-repeat: no-repeat;
     
     /* Purple overlay */
     background-color: #6C2B9D;
     background-blend-mode: multiply;
-    opacity: 0.7; /* adjust transparency */
+    opacity: 0.7; 
 }
 
 
 
 .problems-banner .banner-content-wrapper {
     position: relative;
-    z-index: 3; /* Must be above the pseudo-elements */
+    z-index: 3; 
     display: flex;
     align-items: center;
     height: 100%;
-    padding: 60px; /* Inner padding */
+    padding: 60px; 
 }
 
 .problems-banner .banner-text-content {
-    /* Pushes the content to the right side (roughly 1/3 of the space) */
     margin-left: auto; 
-    width: 48%; /* Controls the width of the text block */
+    width: 48%; 
     color: white;
 }
 
@@ -97,7 +96,6 @@
 }
 
 .problems-banner::before {
-    /* CRITICAL FIX: Disable the aggressive rotation and scaling on mobile screens */
     transform: none !important;
     background-size: cover !important;
     background-position: center !important;
@@ -110,7 +108,6 @@
 }
 
 .problems-banner .banner-text-content {
-    /* Center the text block horizontally and ensure it uses full width */
     width: 100% !important;
     margin-left: auto !important;
     margin-right: auto !important;

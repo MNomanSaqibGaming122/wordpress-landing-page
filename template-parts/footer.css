@@ -2,7 +2,6 @@
 /* Minimal Footer Styles */
 /* ========================================================================= */
 
-/* The outer wrapper ensures the padding is handled correctly */
 .site-footer-minimal-wrapper {
     width: 100%;
     max-width: 1200px;
@@ -10,26 +9,25 @@
 }
 
 .site-footer-minimal {
-    /* Main Container Layout */
     display: flex;
-    justify-content: space-between; /* Pushes content to opposite ends */
+    justify-content: space-between; 
     align-items: center;
     
-    max-width: 1280px; /* Aligns with other sections */
+    max-width: 1280px; 
     margin: 0 auto;
-    padding: 30px 40px; /* Padding for top/bottom and sides */
+    padding: 30px 40px; 
 }
 
 /* --- Left Side: Copyright Text --- */
 .footer-copyright p {
     margin: 0;
     font-size: 14px;
-    color: var(--body-text); /* Standard body text color */
+    color: var(--body-text); 
 }
 
 .footer-logo-text {
-    font-weight: 600; /* Logo is slightly bolder */
-    color: var(--dark-text); /* Darker text color */
+    font-weight: 600; 
+    color: var(--dark-text); 
     
 }
 
@@ -38,7 +36,7 @@
     
     display: flex;
     align-items: center;
-    gap: 20px; /* Spacing between links */
+    gap: 20px; 
   
 }
 
