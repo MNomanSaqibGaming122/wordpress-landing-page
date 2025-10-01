@@ -1,0 +1,102 @@
+/*
+ Theme Name:   Magnifico Landing
+ Template:     twentytwentyfour
+ Description:  A child theme for the Twenty Twenty-Four theme to build the Magnifico landing page.
+ Author:       Your Name
+ Version:      1.0.0
+*/
+
+
+/*
+ * 1. Global Styles & Variables
+ * ------------------------------------------------------------------------- */
+:root {
+    --primary-blue: #2A53C1;
+    --dark-text: #1D2939;
+    --body-text: #667085;
+    --light-gray-border: #EAECF0;
+    --font-family-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+
+
+body {
+    font-family: var(--font-family-main);
+    color: var(--body-text);
+    background-color: #FFFFFF; /* Ensures a white background */
+}
+
+/* -------------------------------------------------------------------------- */
+/* 2. Header Styles (for Custom Structure)
+/* -------------------------------------------------------------------------- */
+
+/* This styles the top-level Group block */
+.site-header-custom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+}
+
+/* This styles the Row containing the Nav and Buttons */
+.header-right-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* This creates space between the menu and the buttons */
+}
+
+/* This styles the Navigation block's inner list */
+.header-nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav a {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--body-text);
+    text-decoration: none;
+}
+
+.header-nav a:hover {
+    color: var(--primary-blue);
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* 3. Button Styles
+/* -------------------------------------------------------------------------- */
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    border: 1px solid transparent;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-blue);
+    color: #FFFFFF;
+    border-color: var(--primary-blue);
+}
+.btn-primary:hover {
+    background-color: #22449b;
+    border-color: #22449b;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--body-text);
+    border: 1px solid var(--light-gray-border);
+}
+.btn-secondary:hover {
+    background-color: var(--light-gray-border);
+    color: var(--dark-text);
+}
