@@ -1,0 +1,72 @@
+/* ========================================================================= */
+/* CTA Section: Join the Community */
+/* ========================================================================= */
+
+.cta-section {
+    /* Dimensions and Shape */
+    width: 100%;
+    max-height: 150px;
+    max-width: 1280px; 
+    margin: 80px auto; 
+    padding: 80px 40px;
+    border-radius: 30px; /* Matching your specified radius */
+    
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    
+    /* Gradient Background */
+    background: linear-gradient(90deg, #312E81 5%, #701A75 150%);
+    
+    color: white; 
+}
+
+.cta-section h2 {
+    margin-top: -2rem;
+    color: white;
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    max-width: 650px;
+    margin: 0 auto 2rem auto; 
+    color: rgba(255, 255, 255, 0.85); 
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ----------------------------------- */
+/* 1. DESIGN TOKENS (from global stylesheet) */
+/* ----------------------------------- */
+:root {
+    /* This must be the correct color for the button */
+    --color-primary: #2563EB; 
+    --color-primary-dark: #1e40af;
+    /* ... rest of your global variables ... */
+}
+
+/* ----------------------------------- */
+/* 3. BUTTON STYLING (WITH ANIMATION)  */
+/* ----------------------------------- */
+.signup-btn-primary .wp-block-button__link { 
+    /* Button Base Styles */
+    background-color: var(--color-primary) !important;
+    border: none !important; 
+    border-radius: 6px !important; 
+    
+    /* Text Styling: White, Bold, and Arrow */
+    color: white !important; 
+    font-weight: 600 !important;
+    padding: 12px 25px !important;
+    cursor: pointer;
+    
+    /* REQUIRED CSS ANIMATION/TRANSITION */
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+.signup-btn-primary .wp-block-button__link:hover {
+    background-color: var(--color-primary-dark) !important;
+    transform: translateY(-2px); 
+}

@@ -1,0 +1,94 @@
+/* ========================================================================= */
+/* Workflow Section: Improve Workflow */
+/* ========================================================================= */
+
+.workflow-section {
+    /* Main container layout and spacing */
+    max-width: 1280px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+    align-items: center;
+    gap: 4rem;
+}
+
+/* --- Left Column: Content Area --- */
+.workflow-content h2 {
+    color: #1F2937; /* Dark text color */
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+/* --- Tabbed Navigation Styling --- */
+.workflow-tabs-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #CBD5E1;
+    background-color: #FFFFFF;
+    width: fit-content;
+    
+}
+
+.workflow-tab {
+    /* Reset button styles */
+    border: none;
+    background: none;
+    cursor: pointer;
+    border: 1px solid #CBD5E1;
+    color: #6B7280;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 50px 10px 50px;
+    
+    transition: all 0.2s ease;
+}
+
+.workflow-tab.active {
+    background-color: #CBD5E1;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Tab Content Visibility --- */
+/* Hide all tab content by default */
+.workflow-tab-content-wrapper .workflow-body-text {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Show only the active content */
+.workflow-tab-content-wrapper .workflow-body-text.active {
+    display: block;
+    opacity: 1;
+}
+
+.workflow-body-text {
+    color: #6B7280;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    max-width: 550px;
+}
+
+.workflow-cta {
+    color: #3B76F5; /* Primary blue color */
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.2s ease;
+}
+
+.workflow-cta:hover {
+    color: #2c59b6; 
+}
+
+/* --- Right Column: Visual Area Overrides --- */
+.workflow-visual {
+    max-width: 100%;
+    width: 100%;
+    margin-top: 0 !important; 
+}
+
+

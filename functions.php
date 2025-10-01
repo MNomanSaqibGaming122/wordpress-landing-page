@@ -26,5 +26,14 @@ function magnifico_landing_enqueue_styles() {
 
     //  stylesheet for the banner section.
     wp_enqueue_style( 'child-banner-style', get_stylesheet_directory_uri() . '/assets/css/section-banner.css', array( 'child-tools-style' ), '1.0.4' );
+    
+    // stylesheet for the workflow section.
+    wp_enqueue_style( 'child-workflow-style', get_stylesheet_directory_uri() . '/assets/css/section-workflow.css', array( 'child-banner-style' ), '1.0.4' );
+
+    // stylesheet for the CTA section.
+    wp_enqueue_style( 'child-cta-style', get_stylesheet_directory_uri() . '/assets/css/section-cta.css', array( 'child-workflow-style' ), '1.0.4' );
+
+    // FOOTER STYLESHEET (from template-parts folder).
+    wp_enqueue_style( 'child-footer-style', get_stylesheet_directory_uri() . '/template-parts/footer.css', array( 'child-cta-style' ), '1.0.4' );
 }
 add_action( 'wp_enqueue_scripts', 'magnifico_landing_enqueue_styles' );

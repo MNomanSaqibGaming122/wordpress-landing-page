@@ -5,7 +5,14 @@
  Author:       Your Name
  Version:      1.0.0
 */
-/* Final fix to make plus icons visible */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+
+/*
+ Theme Name: Magnifico Landing
+ ...
+*/
+
 .hero-section > .wp-block-column {
     overflow: visible !important;
 }
@@ -19,7 +26,7 @@
     --dark-text: #1D2939;
     --body-text: #667085;
     --light-gray-border: #CBD5E1;
-    --font-family-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-family-main: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -139,10 +146,10 @@ body {
 }
 
 .hero-section > .wp-block-column:first-child {
-    flex-basis: 45% !important;   /* FORCE the width of the left column */
+    flex-basis: 45% !important;   
 }
 .hero-section > .wp-block-column:last-child {
-    flex-basis: 55% !important;   /* FORCE the width of the right column */
+    flex-basis: 55% !important;   
 }
 
 /* Styles for the content inside the columns (these can stay the same) */
@@ -208,11 +215,11 @@ body {
     gap: 8px;
 }
 
-/* Client Logos (Final Version with Correct Distribution) */
+/* Client Logos Row */
 
 .hero-clients-wrapper {
     display: flex;
-    align-items: stretch; /* Make items fill the height */
+    align-items: stretch; 
     flex-wrap: wrap;
     background-color: #F1F5F9;
     border: 1px solid #E2E8F0;
@@ -221,18 +228,18 @@ body {
     margin-top: 1.5rem;
     width: 600px;
     box-sizing: border-box;
-    padding: 0; /* Remove padding, as we'll space items manually */
-    overflow: hidden; /* Ensures rounded corners are respected */
+    padding: 0; 
+    overflow: hidden; 
 }
 
 .client-logo {
     display: flex;
     align-items: center;
     justify-content: center; /* Centers the icon and text */
-    flex-grow: 1; /* THIS IS THE KEY FIX: Makes each item grow to fill space */
-    color: #64748B;
+    flex-grow: 1; 
+    color: #94A3B8;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 18px;
     white-space: nowrap;
     gap: 8px; /* Gap between icon and text */
 }
@@ -245,8 +252,8 @@ body {
 /* Base styles for all icons */
 .client-logo::before {
     content: '';
-    width: 22px;
-    height: 24px;
+    width: 35px;
+    height: 35px;
     background-color: #94A3B8;
     mask-repeat: no-repeat;
     mask-size: contain;
@@ -346,16 +353,17 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
-    background-color: rgba(255, 255, 255, 0.9);
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.5);
+     background-image: url('assets/icons/play.svg'); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px; /* Maintain the icon size */
     border-radius: 50%;
     box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    transition: transform 0.3s ease;
 }
 .play-button:hover {
     transform: translate(-50%, -50%) scale(1.1);
